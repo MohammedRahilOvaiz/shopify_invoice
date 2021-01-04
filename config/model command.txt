@@ -1,0 +1,9 @@
+sequelize model:create --name Shop --attributes shopUrl:string,accessToken:string,shopName:string,shopAddress:string,shopCity:string,shopState:string,shopCountry:string,shopMail:string,shopLogo:blob
+
+sequelize model:create --name Customer --attributes firstName:string,lastName:string,phone:integer,email:string,shopId:integer
+
+sequelize model:create --name Order --attributes order_no:integer,customerId:integer,shopId:integer,orderDate:date,shippingDate:date,totalAmount:float
+
+sequelize model:create --name OrdersDetail --attributes orderId:integer,productName:string,price:float,quantity:integer,discount:float,total:float
+
+sequelize model:create --name Address --attributes customerId:integer,shippingAddress1:string,shippingAddress2:string,shippingCity:string,shippingState:string,shippingZip:integer,billingAddress1:string,billingAddress2:string,billingCity:string,billingState:string,billingCount:string,billingZip:integer,shopId:integer
